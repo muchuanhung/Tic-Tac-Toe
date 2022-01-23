@@ -1,23 +1,33 @@
 <template>
-
+  <div id="app">
   <!--v-bind物件綁定圈叉切換-->
   <!--v-for陣列物件九宮格-->
   <!--small_number九宮格數字順序bid=block id-->
    <!--v-on click 單向綁定點擊觸發type給予翻轉變數turn包成一個action>player_go(block)-->
+  <h1> {{user}} </h1>
   <div class="block_area">
       <div class="block"
       v-for="(block,bid) in blocks"
       :key="block.id"
-      v-bind:class="{block_circle: block.type == 1, block_cross:block.type == -1}"
+      :class="{block_circle: block.type == 1, block_cross:block.type == -1}"
       @click="player_go(block)"
       > 
         <div class="small_number">
         {{bid+1}}
         </div>
       </div>
+     
+     <h1>Player:</h1>
+     <!--顯示下棋者--> 
+     <div class="block_small"
+      :class="{block_circle: turn == 1, block_cross: turn  == -1}"
+     >
+     </div> 
+    
   
 
   </div>
+</div>  
 </template>
 
 
@@ -34,19 +44,20 @@ $color_bg: #222;
   flex-wrap: wrap;
 }
 
-.block {
+.block{
   width: 150px;
   height: 150px;
   border: 1px solid rgba($color: white, $alpha: 0.2);
   position: relative;
-   box-sizing: border-box;
-  
+  box-sizing: border-box;
 }
+
 
 .small_number{
   color: white;
   opacity: 0.2;
 }
+
 
  /*---區塊元素圈圈---*/
   .block_circle{
@@ -147,7 +158,7 @@ export default {
   },
   //做勝負的判斷
   computed:{
-
+   
   }
 
 }
