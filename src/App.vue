@@ -1,10 +1,10 @@
 <template>
-  <div id="app">
-    <main>
+  <div id="app"> 
     <tic-tac-toe />
-    </main>
   </div>
 </template>
+
+
 <style>
   @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
   * {
