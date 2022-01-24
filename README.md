@@ -2,7 +2,7 @@
 
 #### This is a single page website built by Vue and SASS.
 
-#### ☞ ☞ Take a look at this [muttonhead_ecommerce](https://muchuanhung.github.io/Tic-Tac-Toe/). 👀
+#### ☞ ☞ Take a look at this [Tic-Tac-Toe](https://muchuanhung.github.io/Tic-Tac-Toe/). 👀
 
 ## ⭐ Features
 
