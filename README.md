@@ -1,24 +1,44 @@
-# tic-tac-toe
+# Tic-Tac-toe
 
-## Project setup
+#### This is a single page website built by Vue and SASS.
+
+## ⭐ Features
+
+- Practice classic Vue Project - Tic-Tac-toe
+- Practice v-bind data to return true/flase source
+- Practice v-for to create array data
+- Practice v-on click to connect restat function
+
+## ✏️ Front-End Skills
+
+- HTML
+- CSS
+- SCSS
+- Vue.js
+
+## 🏃‍ Project setup and run
+
+### Please clone the project
+
+```bash
+https://github.com/muchuanhung/Tic-Tac-Toe.git
 ```
-npm install
-```
+
+### Install dependencies
+
+- Change directory
+  ```bash
+  cd tic-tac-toe
+  ```
+- Install project dependencies
+  ```bash
+  npm install
+  ```
 
 ### Compiles and hot-reloads for development
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Open the browser and navigate to http://localhost:8080
