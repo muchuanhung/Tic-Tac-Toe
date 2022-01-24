@@ -18,8 +18,8 @@
         </div>
     </div>
 
-    <h1> {{win_text}} </h1>
      <!--顯示下棋者--> 
+     <h1> {{win_text}} </h1>
      <div class="block_small"
       :class="{block_circle: turn == 1, block_cross: turn  == -1}"
      >
@@ -28,11 +28,11 @@
     <!--重新開始按鈕--> 
     <h2
       @click="restart"
+      v-if="win_text.lenght!=0"
     >
       Restart
     </h2> 
-    
-    
+
   </div>  
 </template>
 
@@ -42,7 +42,6 @@
 $color_blue: #46f;
 $color_red: #f35;
 $color_bg: #222;
-$block_size:100px;
 
 .app{
   height: 100%;
@@ -82,13 +81,10 @@ h2 {
   box-sizing: border-box;
 }
 
-
 .small_number{
   color: white;
   opacity: 0.2;
 }
-
-
 
  /*---區塊元素圈圈---*/
   .block_circle{
@@ -165,7 +161,7 @@ export default {
 		return {
       //宣告這集數為一個變數
       blocks:[],
-      turn:1
+      turn:-1
     }
 	},
   mounted (){
@@ -209,6 +205,7 @@ export default {
       //知道哪一條線條件成立
       return { rule: vtext, value: add }
     })
+      result = result.filter((obj) => Math.abs(obj.value) == 3)
       return result
     },
       //在畫面上顯示贏家一開始初始值-1
@@ -219,12 +216,13 @@ export default {
       if (this.pattern_data.length > 0) {
       winner = this.pattern_data[0].value
     }
+
       if (winner == 3) {
       return 'O wins'
     } else if (winner == -3) {
       return 'X wins'
     }
-      return (this.turn == 1 ? 'X' : 'O') + "' turn"
+      return (this.turn == -1 ? 'X' : 'O') + " turn"
     }
   }
 
